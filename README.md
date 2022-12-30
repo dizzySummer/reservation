@@ -85,6 +85,6 @@ $ source myvenv/bin/activate
 2. To add a nurse, click the "Nurses" button, enter the required details in the form, and select the "is_ nurse" button to grant them nurse status. If the user is a registered nurse, select "Yes" in the "is_rn" drop-down field. Registered nurses have the permission to reserve all shifts, including those for practical nurses and assistants.
 
 3. It's recommended to add the user first, before adding their address in the "Address Book" form.
-4. To add shifts, complete steps 1-4 first. It's not required to include nurse or user information when creating a shift, as it may not be known at that time who will do the shift or who will reserve it (e.g. a nurse, admin, or employer).
+4. To add shifts, complete steps 1-4 first. It's not necessary to include nurse or user information when creating a shift, as it may not be known at that time who will do the shift or who will reserve it (e.g. a nurse, admin, or employer). The nurse and user details can be updated when reserving the shift.
 
 In the authentication and authorization part: Groups have not yet been created.
