@@ -78,7 +78,7 @@ $ source myvenv/bin/activate
 $ source myvenv/bin/activate
 ````
 
-# add data to admin panel
+# add data to database on admin panel
 
 1. To add admin or staff users, click the "Custom Users" button on the left. Then, select the "is_staff" button to give them staff permissions.
 
