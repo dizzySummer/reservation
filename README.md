@@ -37,7 +37,7 @@ D. Admin (Superuser):
 1. [django framework](https://www.djangoproject.com/)
 2. [bootstrap](https://getbootstrap.com/)
 3. [crispy forms](https://django-crispy-forms.readthedocs.io/en/latest/)
-4. [bootstrap_datepicker_plus](https://pypi.org/project/django-bootstrap-datepicker-plus/))
+4. [bootstrap_datepicker_plus](https://pypi.org/project/django-bootstrap-datepicker-plus/)
 
 
 ## Features
@@ -70,11 +70,21 @@ $ source myvenv/bin/activate
 ~$ python3 manage.py runserver
 ~$ python3 manage.py migrate
 ~$ pip3 freeze > requirements.txt
-~$ python manage.py startapp core
-~$ deactivate
+~$ deactivate 
 ```
 # restart 
 
 ```
 $ source myvenv/bin/activate
 ````
+
+# add data to admin panel
+
+1. To add admin or staff users, click the "Custom Users" button on the left. Then, select the "is_staff" button to give them staff permissions.
+
+2. To add a nurse, click the "Nurses" button, enter the required details in the form, and select the "is_ nurse" button to grant them nurse status. If the user is a registered nurse, select "Yes" in the "is_rn" drop-down field. Registered nurses have the permission to reserve all shifts, including those for practical nurses and assistants.
+
+3. It's recommended to add the user first, before adding their address in the "Address Book" form.
+4. To add shifts, complete steps 1-4 first. It's not required to include nurse or user information when creating a shift, as it may not be known at that time who will do the shift or who will reserve it (e.g. a nurse, admin, or employer).
+
+In the authentication and authorization part: Groups have not yet been created.
