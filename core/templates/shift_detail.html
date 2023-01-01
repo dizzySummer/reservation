@@ -1,88 +1,87 @@
-{% extends "base.html" %}
-{% load static %}
-{% block title %}here will add double"{{section.title}}"{% endblock %}
-{% block content %}
-
-{% load crispy_forms_tags %}
-
-{% if user.is_authenticated %}
-
+{% extends "base.html" %} 
+{% load static %} 
+{% block title %}here will add double"{{section.title}}"{% endblock %} 
+{% block content %} {% load crispy_forms_tags %} 
+{% if user.is_authenticated %} 
 <br>
 <div class="content">
-<div class="container">
-<div class="row">
-<div class="col-lg-6">
-   <div class="card-box task-detail">
-      <div class="media mt-0 m-b-30">
-        
-             <div class="media mt-0 m-b-30"><img class="d-flex mr-3 rounded-circle" alt="64x64" src="https://bootdey.com/img/Content/avatar/avatar2.png" style="width: 48px; height: 48px;">
-                        <div class="media-body">
-                            <h5 class="media-heading mb-0 mt-0">{{shift.employer}}</h5>
-                         </div>
-                    </div>
-                     
-            <ul class="list-inline task-dates m-b-0 mt-5 ">
-            
-             
-               <li>
-                  <h5 class="m-b-5">Date</h5>
-                  <p>{{shift.start_time|date}}-<span class="text-dark">{{shift.start_time|date:"D"}}</span></p>
-               </li>
-               <li>
-                  <h5 class="m-b-5">Role</h5>
-                  <p>{{shift.role}}</span></p>
-               </li>
-               <li>
-                  <h5 class="m-b-5">Time </h5>
-                  <p>{{shift.start_time|time}}-{{shift.finish_time|time}}</p>
-               </li>
-
-               <li>
-                  <h5 class="m-b-5">Phone number</h5>
-                  <p>{{shift.employer.phone}}</p>
-               </li>
-               <li>
-                  <h5 class="m-b-5">Email</h5>
-                  <p>{{shift.employer.email}}</p>
-               </li>
-               <li>
-                  <h5 class="m-b-5">Address</h5>
-                  <p>{{shift.address}}</p>
-               </li>
-             </ul>
-  
-            <h5 class="m-b-20">Details</h5>
-          
-            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, illo, iste itaque voluptas corrupti ratione reprehenderit magni similique? Tempore, quos delectus asperiores libero voluptas quod perferendis! Voluptate, quod illo rerum? Lorem ipsum dolor sit amet.</p>
-            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, illo, iste itaque voluptas corrupti ratione reprehenderit magni similique? Tempore, quos delectus asperiores libero voluptas quod perferendis! Voluptate, quod illo rerum? Lorem ipsum dolor sit amet.</p>
-
-            <div class="clearfix"></div>
-            <div class="task-tags mt-4">
-               <h5 class="">Tags</h5>
-
-               <button type="button" class="btn btn-secondary btn-sm">{{shift.role}}</button>
-               <button type="button" class="btn btn-secondary btn-sm">{{shift.status}}</button>
-            
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="card-box task-detail">
+          <div class="media mt-0 m-b-30">
+            <div class="media mt-0 m-b-30">
+              <img class="d-flex mr-3 rounded-circle" alt="64x64" src="https://bootdey.com/img/Content/avatar/avatar2.png" style="width: 48px; height: 48px;">
+              <div class="media-body">
+                <h5 class="media-heading mb-0 mt-0">{{shift.employer}}</h5>
+              </div>
             </div>
             <br>
+            <div class="row align-items-start col-lg-12">
+              <div class="col">
+                <span class="m-b-5">Shift Date</span>
+                <p>{{shift.start_time|date}}- <span class="text-dark">{{shift.start_time|date:"D"}}</span>
+                </p>
+              </div>
+              <div class="col">
+                <span class="m-b-5">Shift Time</span>
+                <p>{{shift.start_time|time}}-{{shift.finish_time|time}}</p>
+              </div>
+            </div>
+            <div class="row align-items-start col-lg-12">
+              <div class="col">
+                <span class="m-b-5">Role</span>
+                <p>{{shift.role}}
+                  </span>
+                </p>
+              </div>
+              <div class="col">
+                <span class="m-b-5">Phone Number</span>
+                <p>{{shift.employer.phone}}</p>
+              </div>
+            </div>
+            <div class="row align-items-start col-lg-12">
+              <div class="col">
+                <span class="m-b-5">Email</span>
+                <p>{{shift.employer.email}}</p>
+              </div>
+              <div class="col">
+                <span class="m-b-5">Published</span>
+                <p>{{shift.pub_date}}</p>
+              </div>
+            </div>
+            <div class="col">
+              <span class="m-b-5">Address</span>
+              <p>{{shift.address}}</p>
+            </div>
+            <span class="m-b-5">Details</span>
+            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, illo, iste itaque voluptas corrupti ratione reprehenderit magni similique? Tempore, quos delectus asperiores libero voluptas quod perferendis! Voluptate, quod illo rerum? Lorem ipsum dolor sit amet.</p>
+            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, illo, iste itaque voluptas corrupti ratione reprehenderit magni similique? Tempore, quos delectus asperiores libero voluptas quod perferendis! Voluptate, quod illo rerum? Lorem ipsum dolor sit amet.</p>
+            <div class="clearfix"></div>
+            <div class="task-tags mt-4">
+              <h5 class="">Tags</h5>
+              <button type="button" class="btn btn-secondary btn-sm">{{shift.role}}</button>
+              <button type="button" class="btn btn-secondary btn-sm">{{shift.status}}</button>
+            </div>
             <br>
-            {% if shift.status == "Open" %}
-         
-            <td><a class="btn btn-sm btn-success" href="{% url 'reserve_shift' shift.id%}">reserve</a></td>
-            {% endif %}
-
-            {% if not request.user.is_nurse %}
-            <td><a class="btn btn-sm btn-info" href="{% url 'update_shift' shift.id %}">Update</a></td>
-            <td><a class="btn btn-sm btn-danger" href="{% url 'delete_shift' shift.id %}">Delete</a></td>
-            {% endif %}  
-         </div>
-         <!-- end row -->
-         <br>
+            <br> {% if shift.status == "Open" %} <td>
+              <a class="btn btn-sm btn-success" href="{% url 'reserve_shift' shift.id%}">reserve</a>
+            </td> {% endif %} {% if not request.user.is_nurse %} <td>
+              <a class="btn btn-sm btn-info" href="{% url 'update_shift' shift.id %}">Update</a>
+            </td>
+            <td>
+              <a class="btn btn-sm btn-danger" href="{% url 'delete_shift' shift.id %}">Delete</a>
+            </td> {% endif %}
+          </div>
+          <!-- end row -->
+          <br>
+        </div>
       </div>
-      <!-- container --> 
-      <br>
-   </div>
-</div>
-
-{% endif %}
-{% endblock %}
+      <div class="col-lg-3 mr-auto">
+        <h4 class="px-3 py-4 op-5 m-0">Other silmilar shifts</h4>
+        <hr class="m-0">
+        <div class="pos-relative px-3 py-3"> bla..bla.. </div>
+        <!-- container -->
+        <br>
+      </div>
+    </div> {% endif %} {% endblock %}
