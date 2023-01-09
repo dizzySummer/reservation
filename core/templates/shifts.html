@@ -78,12 +78,20 @@
           </div>
      
         <div class="col">
-          <br>
+            <br>
           
           <button class="btn btn-outline-dark my-sm-0" type="submit">Search</button>
-          <button class="btn btn-outline-dark my-sm-0" type="submit"><a style="text-decoration: none;" href ="{% url 'chart'%}">Chart</a></button>
-          <button class="btn btn-outline-dark my-sm-0" type="submit"><a style="text-decoration: none;" href ="{% url 'export_csv'%}">CSV</a></button>
-  
+       
+        </div>
+        <div class="col">
+            <br>
+            <button class="btn btn-outline-dark my-sm-0" id="tobesolved" type="submit"><a style="text-decoration: none; color:#7e55c7" href ="{% url 'chart'%}">Chart</a></button>
+          
+        </div>
+        <div class="col">
+            <br>
+            <button class="btn btn-outline-dark my-sm-0" id="modifiedHover" type="submit"><a style="text-decoration: none; color:#7e55c7" href ="{% url 'export_csv'%}">CSV</a></button>
+           
         </div>
       </form>
     </div>

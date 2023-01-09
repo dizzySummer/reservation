@@ -14,6 +14,8 @@ const handleToggleInput = (e) => {
  console.log("Testing")
 };
 
+window.onload=function(){
+  showPassWordToggle.addEventListener('click',handleToggleInput);
+}
 
-showPassWordToggle.addEventListener('click',handleToggleInput);
 
